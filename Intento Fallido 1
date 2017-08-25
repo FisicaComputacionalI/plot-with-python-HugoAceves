@@ -1,0 +1,46 @@
+[alumno@mod302 ~]$ ssh-keygen -t rsa -b 4096 -C "coco_tula@hotmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/alumno/.ssh/id_rsa): 
+/home/alumno/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/alumno/.ssh/id_rsa.
+Your public key has been saved in /home/alumno/.ssh/id_rsa.pub.
+The key fingerprint is:
+94:c1:65:d8:a3:d5:94:c6:18:64:64:75:4d:5b:25:7b coco_tula@hotmail.com
+The key's randomart image is:
++--[ RSA 4096]----+
+|       ..*OBo.oo=|
+|        o*= =. o+|
+|        oo o  ..E|
+|       ..      . |
+|        S        |
+|                 |
+|                 |
+|                 |
+|                 |
++-----------------+
+[alumno@mod302 ~]$ ls -al ~/.ssh
+total 16
+drwx------.  2 alumno alumno 4096 ago 25 08:18 .
+drwx------. 29 alumno alumno 4096 ago 25 07:22 ..
+-rw-------.  1 alumno alumno 3311 ago 25 08:20 id_rsa
+-rw-r--r--.  1 alumno alumno  743 ago 25 08:20 id_rsa.pub
+[alumno@mod302 ~]$ sudo apt-get install xclip
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for alumno: 
+alumno is not in the sudoers file.  This incident will be reported.
+[alumno@mod302 ~]$ eval "$(ssh-agent -s)"
+Agent pid 5010
+[alumno@mod302 ~]$ ssh-add ~/.ssh/id_rsa^C
+[alumno@mod302 ~]$ ssh-add ~/.ssh/home/alumno/.ssh/id_rsa.pub
+/home/alumno/.ssh/home/alumno/.ssh/id_rsa.pub: No such file or directory
+[alumno@mod302 ~]$ 
